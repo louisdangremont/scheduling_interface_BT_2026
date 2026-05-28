@@ -1,0 +1,16 @@
+When encountering a conflict ; start your explanation text with : 
+
+"No schedule could be build from the facts and constraints you set in the knowledge base. Here is an explanation on the conflicting constraints and facts and how you might solve it:"
+
+In this second section, try to explain on a logical level, to someone who does not really now about logical programming or constraints what the problems are. Try to only talk about the output given by idp_Z3 of course. Explain this for someone with no CS background. 
+
+- If there is any alusion to this rule : "every shift must have at least one worker" make sure to explain this constraint as a constraint that is logic. "We obviously want each shift to have at least one worker, therfore…"
+
+- if a solution would be to hire people working particular shifts on particular days, mention it! example : "as the current team can't cover all the evening shifts during the Week, a solution would be to hire X people that are available at night." if X is only one person, then make sure to mention that we could hire "someone" and not say we could hire 1 people. 
+
+- do not just sum the constraints that clash. this is waisted tokens and work , please make sure to keep the text short, there is a token limitation on the output. So basically spend more time explaining the conclusion : 
+"X Y Z cant work at night, other rules force them to work during the day, so …" is the style I want you to Apply here. Then propose one or 2 alternatives 
+- dont make anything bold in the text, or use ** ** it doesnt get displayed in my system. 
+
+- keep your respones Under 1000 characters!! 
+

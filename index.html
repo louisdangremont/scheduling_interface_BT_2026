@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Constraint System</title>
+  <meta name="description" content="A constraint-driven scheduler powered by IDP-Z3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Signika:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="/vendor/vis-timeline/vis-timeline-graph2d.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Schedule Constraint System</h1>
+  </header>
+
+  <main class="layout">
+    <div class="top-row">
+      <!-- Chat panel -->
+      <section class="panel chat-panel">
+        <h2 class="panel-title">Chat</h2>
+
+        <div class="chat-window" id="chatWindow"></div>
+
+        <form class="chat-input-row" id="chatForm" autocomplete="off">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Type a constraint you want to add on your schedule"
+          />
+          <button type="submit" class="add-knowledge-btn" title="Submit constraint">
+            + Add Knowledge
+          </button>
+        </form>
+
+        <button type="button" class="create-schedule-btn" id="createScheduleBtn">
+          Create Schedule
+        </button>
+      </section>
+
+      <!-- Knowledge base panel -->
+      <section class="panel knowledge-panel">
+        <h2 class="panel-title">Knowledge Base</h2>
+
+        <ul class="constraint-list" id="constraintList"></ul>
+      </section>
+    </div>
+
+    <!-- Schedule panel -->
+    <section class="panel schedule-panel">
+      <h2 class="panel-title">Schedule</h2>
+
+      <div id="scheduleTimeline" class="schedule-timeline"></div>
+    </section>
+  </main>
+
+  <script src="/vendor/vis-timeline/vis-timeline-graph2d.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
