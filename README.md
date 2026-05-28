@@ -15,7 +15,7 @@ You type constraints in plain English, the LLM translates them to FO(.) logic, a
    - `OPENROUTER_API_KEY` — your active key from [openrouter.ai](https://openrouter.ai/)
    - `MODEL_ID` — the model you want to use (see below)
 
-## Run
+## Run the system
 
 ```
 py -m uvicorn main:app --reload
@@ -25,16 +25,14 @@ Then open http://127.0.0.1:8000 in your browser.
 
 ## Picking a model
 
-Set `MODEL_ID` in `.env`. A free model you can try:
+Set `MODEL_ID` in `.env`. During developpment we used 3 models that brought positive results
 
-```
-MODEL_ID=nvidia/nemotron-3-super-120b-a12b:free
-```
+ `anthropic/claude-sonnet-4.6`,`anthropic/claude-opus-4.7` and `deepseek/deepseek-v4-flash`.
 
-Any OpenRouter-compatible model ID works (e.g. `anthropic/claude-sonnet-4.6`, `deepseek/deepseek-v4-flash`).
+ none of them are free; the deepseek-v4-flash model is the cheapest: costing at 0,10$/M input tokens and 0,20$/M output tokens
 
 ## How to use
 
 - Type constraints or availabilities in the chat
-- Click **+ Add Knowledge** to save them
-- Click **Create Schedule** to run the solver and see the timeline
+- Click + Add Knowledge to save them
+- Click Create Schedule to run the solver and see the timeline
