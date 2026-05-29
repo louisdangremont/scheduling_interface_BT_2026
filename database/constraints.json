@@ -1,17 +1,1 @@
-[
-  {
-    "id": 1,
-    "nl": "Every worker works at most one shift per day.",
-    "fo": "!w in Worker, !d in Day: #{s in Shift: works(w, d, s)} =< 1."
-  },
-  {
-    "id": 2,
-    "nl": "If a worker works the evening shift on Monday through Saturday, then the next day they either have no shift or work the evening shift again.",
-    "fo": "!w in Worker: ((works(w, Mon, evening) => (~(exists s: works(w, Tue, s)) | works(w, Tue, evening))) & (works(w, Tue, evening) => (~(exists s: works(w, Wed, s)) | works(w, Wed, evening))) & (works(w, Wed, evening) => (~(exists s: works(w, Thu, s)) | works(w, Thu, evening))) & (works(w, Thu, evening) => (~(exists s: works(w, Fri, s)) | works(w, Fri, evening))) & (works(w, Fri, evening) => (~(exists s: works(w, Sat, s)) | works(w, Sat, evening))) & (works(w, Sat, evening) => (~(exists s: works(w, Sun, s)) | works(w, Sun, evening))))."
-  },
-  {
-    "id": 3,
-    "nl": "Each worker either works at least one shift on both Saturday and Sunday, or works no shifts on either weekend day.",
-    "fo": "!w in Worker: ((exists s: works(w, Sat, s)) & (exists s: works(w, Sun, s))) | (~(exists s: works(w, Sat, s)) & ~(exists s: works(w, Sun, s)))."
-  }
-]
+[]

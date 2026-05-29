@@ -1,4 +1,3 @@
-"""Small wrapper around idp-engine for solving the schedule FO(.) program."""
 
 from __future__ import annotations
 
@@ -90,6 +89,7 @@ structure S:V {{
     is_available := {{{", ".join(triples)}}}.
 }}
 """
+
 
 
 def to_idp_syntax(fo: str) -> str:

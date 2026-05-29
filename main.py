@@ -13,11 +13,8 @@ load_dotenv()
 app = FastAPI()
 
 API_KEY  = os.getenv("OPENROUTER_API_KEY", "")
+MODEL_ID = os.getenv("MODEL_ID", "")  
 
-# MODEL_ID = "deepseek/deepseek-v4-flash"
-# MODEL_ID = "anthropic/claude-sonnet-4.6"  
-
-MODEL_ID = "cognitivecomputations/dolphin-mistral-24b-venice-edition:free"  
 
 PROMPT_FILE = os.path.join(os.path.dirname(__file__), "prompts", "validityprotocol.txt")
 
@@ -657,9 +654,9 @@ async def humanize_unsat_explanation(raw_explanation: str, constraints: list[dic
                 timeout=20.0,
             )
         text = response.json()["choices"][0]["message"]["content"].strip()
-        return text or HUMANIZER_UNAVAILABLE_MESSAGE
+        return text or LLM_UNAVAILABLE_MESSAGE
     except Exception:
-        return HUMANIZER_UNAVAILABLE_MESSAGE
+        return LLM_UNAVAILABLE_MESSAGE
 
 
 @app.post("/api/create-schedule")
